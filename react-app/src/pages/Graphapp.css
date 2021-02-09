@@ -1,0 +1,25 @@
+.site {
+    flex-direction: column;
+    display: flex;
+}
+
+.buttonBar {
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    justify-content: center;
+}
+
+.grid {
+    display: flex;
+}
+
+#clearWallsBtn {
+    margin-left: 2%;
+}
+
+#clearEverythingBtn {
+    margin-left: 2%
+}
+
+
