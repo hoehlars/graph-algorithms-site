@@ -1,45 +1,35 @@
 import React from "react";
+import INode from "../model/Node";
 import './Node.css'
 
 
 interface NodeProps {
-    start: boolean;
-    end: boolean;
-}
-
-interface NodeState {
-    wall: boolean;
+    node: INode;
+    onMouseOver: (x: number, y: number) => void;
 }
 
 
-class Node extends React.Component<NodeProps, NodeState> {
+class Node extends React.Component<NodeProps> {
 
     constructor(props: Readonly<NodeProps>) {
       super(props);
-
-      this.state = {
-          wall: false
-      }
-    }
-
-    private changeBackground() {
-        if(!this.props.start && !this.props.end) {
-            this.setState({ wall: true })
-        }
-        
     }
 
     render() {
 
         let backgroundStyle: React.CSSProperties = {}
         
-        if(this.props.start) {
+        if(this.props.node.start) {
             backgroundStyle = {
                 backgroundColor: "lightgreen"
             }
-        } else if(this.props.end) {
+        } else if(this.props.node.end) {
             backgroundStyle = {
                 backgroundColor: "red"
+            }
+        } else if(this.props.node.wall) {
+            backgroundStyle = {
+                backgroundColor: "lightgrey"
             }
         } else {
             backgroundStyle = {
@@ -47,14 +37,8 @@ class Node extends React.Component<NodeProps, NodeState> {
             }
         }
 
-        if(this.state.wall) {
-            backgroundStyle = {
-                backgroundColor: "lightgrey"
-            }
-        }
-
         return (
-            <div onMouseOver={() => this.changeBackground()} className="node" style={backgroundStyle}></div>
+            <div onMouseOver={() => this.props.onMouseOver(this.props.node.x, this.props.node.y)} className="node" style={backgroundStyle}></div>
         )
     }
 }

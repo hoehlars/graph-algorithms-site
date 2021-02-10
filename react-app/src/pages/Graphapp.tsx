@@ -9,11 +9,13 @@ import Astar from "../algorithms/Astar";
 import Algorithm from "../algorithms/Algorithm"
 import Grid from "../components/Grid";
 
-enum Algorithms {DFS, BFS, Astar, Dijkstra}
+
 
 interface GraphappState {
     algorithm?: Algorithm;
 }
+
+enum Algorithms {DFS, BFS, Astar, Dijkstra}
 
 class Graphapp extends React.Component<{}, GraphappState> {
     private readonly WIDTH: number = 50;
@@ -22,6 +24,9 @@ class Graphapp extends React.Component<{}, GraphappState> {
     constructor(props: Readonly<{}>) {
       super(props);
 
+      this.state = {
+          algorithm: undefined
+      };
     }
 
     private changeAlgorithm(algorithm: Algorithms): void {
@@ -43,16 +48,19 @@ class Graphapp extends React.Component<{}, GraphappState> {
     }
 
     render() {
+
         return (
             <div className="site">
                 <div className="buttonBar">
                     <DropdownButton id="dropdown-item-button" variant="secondary" title="Change algorithm">
                         <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.DFS)}>Depth-first-search (DFS)</Dropdown.Item>
                         <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.BFS)}>Breadth-first-search (BFS)</Dropdown.Item>
-                        <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.Astar)}>Dijkstra</Dropdown.Item>
-                        <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.Dijkstra)}>A*</Dropdown.Item>
+                        <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.Dijkstra)}>Dijkstra</Dropdown.Item>
+                        <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.Astar)}>A*</Dropdown.Item>
                     </DropdownButton>
+                    {this.state.algorithm ? <p className="algorithmText">Current algorithm: {this.state.algorithm.toString()}</p> : <p className="algorithmText">No algorithm chosen</p>}
                 </div>
+                
 
                 <Grid width={this.WIDTH} height={this.HEIGHT}/>
             </div>

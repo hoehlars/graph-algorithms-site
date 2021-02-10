@@ -14,12 +14,10 @@
     display: flex;
 }
 
-#clearWallsBtn {
+.algorithmText {
+    margin-top: 0.5%;
     margin-left: 2%;
-}
-
-#clearEverythingBtn {
-    margin-left: 2%
+    font-family: sans-serif;
 }
 
 

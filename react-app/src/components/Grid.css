@@ -2,3 +2,17 @@
     display: inline-grid;
     padding: 2%;
 }
+
+.btn {
+    margin: 1%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.gridBtn {
+    display: flex;
+    flex-direction: column;
+}
