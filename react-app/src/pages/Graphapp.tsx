@@ -12,7 +12,8 @@ import Grid from "../components/Grid";
 
 
 interface GraphappState {
-    algorithm?: Algorithm;
+    algorithm: Algorithm;
+    
 }
 
 enum Algorithms {DFS, BFS, Astar, Dijkstra}
@@ -25,7 +26,7 @@ class Graphapp extends React.Component<{}, GraphappState> {
       super(props);
 
       this.state = {
-          algorithm: undefined
+          algorithm: new DFS(),
       };
     }
 
@@ -48,11 +49,10 @@ class Graphapp extends React.Component<{}, GraphappState> {
     }
 
     render() {
-
         return (
             <div className="site">
                 <div className="buttonBar">
-                    <DropdownButton id="dropdown-item-button" variant="secondary" title="Change algorithm">
+                    <DropdownButton id="dropdown-item-button" variant="secondary" title={`${this.state.algorithm.toString()}`}>
                         <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.DFS)}>Depth-first-search (DFS)</Dropdown.Item>
                         <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.BFS)}>Breadth-first-search (BFS)</Dropdown.Item>
                         <Dropdown.Item as="button" onClick={() => this.changeAlgorithm(Algorithms.Dijkstra)}>Dijkstra</Dropdown.Item>
@@ -60,9 +60,8 @@ class Graphapp extends React.Component<{}, GraphappState> {
                     </DropdownButton>
                     {this.state.algorithm ? <p className="algorithmText">Current algorithm: {this.state.algorithm.toString()}</p> : <p className="algorithmText">No algorithm chosen</p>}
                 </div>
-                
 
-                <Grid width={this.WIDTH} height={this.HEIGHT}/>
+                <Grid width={this.WIDTH} height={this.HEIGHT} algorithm={this.state.algorithm} />
             </div>
         )
     }

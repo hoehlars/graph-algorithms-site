@@ -5,6 +5,9 @@ interface INode {
     end: boolean;
     wall: boolean;
     visited?: boolean;
+    order?: number;
+    distance?: number;
+    prevNode?: INode;
 }
 
 export default INode;

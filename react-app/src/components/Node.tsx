@@ -5,7 +5,7 @@ import './Node.css'
 
 interface NodeProps {
     node: INode;
-    onMouseOver: (x: number, y: number) => void;
+    onMouseOver: (node: INode) => void;
 }
 
 
@@ -29,7 +29,11 @@ class Node extends React.Component<NodeProps> {
             }
         } else if(this.props.node.wall) {
             backgroundStyle = {
-                backgroundColor: "lightgrey"
+                backgroundColor: "grey"
+            }
+        } else if(this.props.node.visited) {
+            backgroundStyle = {
+                backgroundColor: "green"
             }
         } else {
             backgroundStyle = {
@@ -38,7 +42,9 @@ class Node extends React.Component<NodeProps> {
         }
 
         return (
-            <div onMouseOver={() => this.props.onMouseOver(this.props.node.x, this.props.node.y)} className="node" style={backgroundStyle}></div>
+            <div onMouseOver={() => this.props.onMouseOver(this.props.node)} className="node" style={backgroundStyle}>
+                {this.props.node.order || this.props.node.order === 0 ? <p className="orderText">{this.props.node.order}</p> : null}
+            </div>
         )
     }
 }
