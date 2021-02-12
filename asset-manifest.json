@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/graph-algorithms-site/static/css/main.e3ead1d3.chunk.css",
+    "main.js": "/graph-algorithms-site/static/js/main.ebaced84.chunk.js",
+    "main.js.map": "/graph-algorithms-site/static/js/main.ebaced84.chunk.js.map",
+    "runtime-main.js": "/graph-algorithms-site/static/js/runtime-main.2f63c026.js",
+    "runtime-main.js.map": "/graph-algorithms-site/static/js/runtime-main.2f63c026.js.map",
+    "static/css/2.150d169a.chunk.css": "/graph-algorithms-site/static/css/2.150d169a.chunk.css",
+    "static/js/2.7128559f.chunk.js": "/graph-algorithms-site/static/js/2.7128559f.chunk.js",
+    "static/js/2.7128559f.chunk.js.map": "/graph-algorithms-site/static/js/2.7128559f.chunk.js.map",
+    "static/js/3.079cd7ad.chunk.js": "/graph-algorithms-site/static/js/3.079cd7ad.chunk.js",
+    "static/js/3.079cd7ad.chunk.js.map": "/graph-algorithms-site/static/js/3.079cd7ad.chunk.js.map",
+    "index.html": "/graph-algorithms-site/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/graph-algorithms-site/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.e3ead1d3.chunk.css.map": "/graph-algorithms-site/static/css/main.e3ead1d3.chunk.css.map",
+    "static/js/2.7128559f.chunk.js.LICENSE.txt": "/graph-algorithms-site/static/js/2.7128559f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2f63c026.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.7128559f.chunk.js",
+    "static/css/main.e3ead1d3.chunk.css",
+    "static/js/main.ebaced84.chunk.js"
+  ]
+}
